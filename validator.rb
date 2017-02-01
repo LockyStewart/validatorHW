@@ -1,4 +1,7 @@
 class Validator
-  def initialize()
+  def initialize (a)
+  end
+
+  def userchecker (a)
   end
 end
