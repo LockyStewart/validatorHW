@@ -10,6 +10,6 @@ class ValidatorTest < Minitest::Test
   def test_userchecker
     userchecker = Validator.new('userinformation.csv')
     assert userchecker == []
-    #but what do I put in this hash? Do i have to manually go check the file?#
+    #but what do I put in this array? Do i have to manually go check the file?#
   end
 end
