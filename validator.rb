@@ -15,8 +15,9 @@ class Validator
 
     dates.each do |string|
       gooddates += string.scan(/^\A[1-12][\/-][1-31][\/-]\d{2,4}\z$/)
+      #how do I do 2 or 4, without the matchin groups issue?
     end
-
-    goodates
+    baddates = dates - gooddates
+    baddates
   end
 end

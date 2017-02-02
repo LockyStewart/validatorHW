@@ -17,8 +17,9 @@ dates = row_one.drop(1)
 dates.each do |string|
   gooddates += string.scan(/^\A[1-12][\/-][1-31][\/-]\d{2,4}\z$/)
 end
-p dates
-p gooddates
+
+baddates = dates - gooddates
+p baddates
 
 
 
