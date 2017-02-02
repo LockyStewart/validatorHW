@@ -12,4 +12,14 @@ class ValidatorTest < Minitest::Test
     assert userinfo.baddates == ["2016-02", "13/03/2016", "442016", "2016-07-07", "Yesterday"]
     #but what do I put in this array? Do i have to manually go check the file? do i put in the incoorect ones or the right ones?
   end
+
+  def test_baddates_count
+    userinfo = Validator.new('userinformation.csv')
+    assert userinfo.baddates_count == 5
+  end
+
+  def test_baddates_location
+    userinfo = Validator.new('userinformation.csv')
+    assert userinfo.baddates_location == [2, 4, 5, 6, 7]
+  end
 end

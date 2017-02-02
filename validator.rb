@@ -21,3 +21,11 @@ class Validator
     baddates
   end
 end
+
+def baddates_count
+  baddates.count
+end
+
+def baddates_location
+  baddates_location = baddates.map{|date| row_one.index(date)}
+end

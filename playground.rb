@@ -22,6 +22,16 @@ baddates = dates - gooddates
 p baddates
 
 
+# baddates_location = []
+# baddates.each do |date|
+#   baddates_location += row_one.index(date)
+# end
+
+baddates_location = baddates.map{|date| row_one.index(date)}
+
+p baddates_location
+
+
 
 # dates = userinformation.map{|person| person[1]}
 # dates.reject!{|date| date == 'joined'}
