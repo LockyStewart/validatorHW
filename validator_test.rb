@@ -7,9 +7,9 @@ class ValidatorTest < Minitest::Test
     assert Validator.new('userinformation.csv')
   end
 
-  def test_joindate
-    joindate = Validator.new('userinformation.csv')
-    assert joindate == ['1/1/16','2/3/2016']
+  def test_baddates
+    userinfo = Validator.new('userinformation.csv')
+    assert userinfo.baddates == ["2016-02", "13/03/2016", "442016", "2016-07-07", "Yesterday"]
     #but what do I put in this array? Do i have to manually go check the file? do i put in the incoorect ones or the right ones?
   end
 end
