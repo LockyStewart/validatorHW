@@ -36,9 +36,19 @@ class Validator
       goodages += string.scan(/^\d{1,115}$/)
     end
     badages = ages - goodages
-    badages_location = badages.map{|date| column_two.index(date)}
+    badages_location = badages.map{|age| column_two.index(age)}
     badages_location
-
   end
 
+  def bademails
+    goodemails = []
+    column_three = @data.map{|person| person[3]}
+    emails = column_three.drop(1)
+    emails.each do |string|
+      goodemails += string.scan(/^[\w+.-]+[@][\w+.-]+[.][\w+.-]+$/)
+    end
+    bademails = emails - goodemails
+    bademails_location = bademails.map{|email| column_three.index(email)}
+    bademails_location
+  end
 end
