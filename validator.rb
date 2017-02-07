@@ -16,14 +16,13 @@ class Validator
       summaryhash[person[0]] << person[3] if bademail?(person[3])
       summaryhash[person[0]] << person[4] if badphone?(person[4])
     end
-    summaryhash.delete('name')
     puts "There were #{summaryhash.reject{|k,v| v ==[]}.length} lines that had issues."
     puts "There are #{baddates.count} bad Joined dates"
     puts "There are #{badages.count} bad Ages"
     puts "There are #{bademails.count} bad Email addresses"
     puts "There are #{badphones.count} bad Phone numbers"
     puts "These are the bad fields:"
-    p summaryhash
+    p summaryhash.reject{|k,v| v ==[]}
   end
 
   def baddate?(date)

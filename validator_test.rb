@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require 'minitest/untz'
 require './validator.rb'
 
 class ValidatorTest < Minitest::Test
