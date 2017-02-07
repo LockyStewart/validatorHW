@@ -6,6 +6,7 @@ class Validator
     @data = CSV.read(@filename)
   end
 
+
   def summary
     summaryhash = {}
     @data.each do |person|
@@ -15,7 +16,8 @@ class Validator
       summaryhash[person[0]] << person[3] if bademail?(person[3])
       summaryhash[person[0]] << person[4] if badphone?(person[4])
     end
-    puts "these are the bad fields:"
+    puts "These are the bad fields:"
+    summaryhash.delete('name')
     p summaryhash
   end
 
@@ -101,3 +103,4 @@ end
 
 v = Validator.new('userinformation.csv')
 v.summary
+p 'these things'
